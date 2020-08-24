@@ -3,7 +3,7 @@ const mysql = require('mysql');
 
 const app = express();
 const env = process.env;
-require('dotenv').config({path: `ignore/.env`});
+require('dotenv').config();
 
 const DB_HOST = env.DB_HOST;
 const DB_USERNAME = env.DB_USERNAME;
