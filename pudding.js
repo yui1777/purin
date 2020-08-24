@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
 app.post('/purin2', (req, res) => {
     // データベースに追加する処理を書いてください
     connection.query(
-      'insert into purin_type2(name,username) values(?,?)',
+      'insert into db_database(name,username) values(?,?)',
       [req.body.purinname,req.body.username],
       (error,results)=>{
           res.render('purin2.ejs');
