@@ -51,7 +51,7 @@ app.get('/purin2', (req, res) => {
   );
 app.get('/purin3', (req, res) => {
   
-      res.render('purin3.ejs', {purin_type2: results});
+      res.render('purin3.ejs');
   
 });
 app.listen(process.env.PORT || 4000);
