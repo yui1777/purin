@@ -2,12 +2,20 @@ const express = require('express');
 const mysql = require('mysql');
 
 const app = express();
+const env = process.env;
+require('dotenv').config({path: `ignore/.env`});
+
+const db_host = process.env.purin_HOST;
+const db_user = process.env.purin_user;
+const db_password = process.env.purin_pass;
+const db_database = process.env.purin_database;
+
 
 const connection = mysql.createConnection({
-  host:'localhost',
-  user: 'root',
-  password: 'kobecollege',
-  database: 'pudding'
+  host:'db_host',
+  user: 'db_user',
+  password: 'db_password',
+  database: 'db_database'
 });
 connection.connect((err) => {
   if (err) {
@@ -49,4 +57,4 @@ app.get('/purin3', (req, res) => {
     }
   );
 });
-app.listen(app.listen(process.env.PORT || 4000));
+app.listen(process.env.PORT || 4000);
