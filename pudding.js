@@ -5,18 +5,12 @@ const app = express();
 const env = process.env;
 require('dotenv').config();
 
-const DB_HOST = env.DB_HOST;
-const DB_USERNAME = env.DB_USERNAME;
-const DB_PASSWORD=env.DB_PASSWORD;
-const DB_DATABASE = env.DB_DATABASE;
-
 const connection = mysql.createConnection({
-  host:DB_HOST,
-  user:DB_USERNAME,
-  password: DB_PASSWORD,
-  database: DB_DATABASE
+  host:env.DB_HOST,
+  user:env.DB_USERNAME,
+  password: env.DB_PASSWORD,
+  database: env.DB_DATABASE
 });
-
 
 
 connection.connect((err) => {
