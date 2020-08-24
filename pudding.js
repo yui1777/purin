@@ -50,11 +50,8 @@ app.get('/purin2', (req, res) => {
     }
   );
 app.get('/purin3', (req, res) => {
-  connection.query(
-    'SELECT * FROM purin_type2',
-    (error, results) => {
+  
       res.render('purin3.ejs', {purin_type2: results});
-    }
-  );
+  
 });
 app.listen(process.env.PORT || 4000);
